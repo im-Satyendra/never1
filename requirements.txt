@@ -10,3 +10,4 @@ pyrogram
 wkhtmltopdf
 htmlwebshot
 cfscrape
+BeautifulSoup4
