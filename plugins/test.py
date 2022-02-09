@@ -102,7 +102,7 @@ async def photo(c, m):
             ]
                 )
         try:    
-            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markuo = btn)
+            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markup = btn)
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
@@ -174,7 +174,7 @@ async def tg(c,m):
             ]
                 )
         try:    
-            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markuo = btn)
+            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markup = btn)
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
