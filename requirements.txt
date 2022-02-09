@@ -1,0 +1,12 @@
+wget
+wheel
+psutil
+heroku3
+requests
+tgcrypto
+ffmpeg-python
+python-dotenv
+pyrogram
+wkhtmltopdf
+htmlwebshot
+cfscrape
