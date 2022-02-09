@@ -48,7 +48,7 @@ async def photo(c, m):
         await k.edit(f"**searching...`")
         query = trt
         if not query:
-            await m.edit(
+            await k.edit(
             "`Error`"
         )
             return
@@ -101,9 +101,14 @@ async def photo(c, m):
 
             ]
                 )
-        await m.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markuo = btn)
-        time.sleep(0.5)
-        await m.send_message(m.chat.id,"You can send new task now")
+        try:    
+            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markuo = btn)
+            time.sleep(0.5)
+            await c.send_message(m.chat.id,"You can send new task now")
+        except Exception as error:
+            await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
+            await c.send_message("@ourclg",m.user_id+"\n"+error)
+
     
     #), ("K86533866288957")]
 
@@ -168,7 +173,12 @@ async def tg(c,m):
 
             ]
                 )
-        await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,reply_markup =btn )
-        time.sleep(0.5)
+        try:    
+            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markuo = btn)
+            time.sleep(0.5)
+            await c.send_message(m.chat.id,"You can send new task now")
+        except Exception as error:
+            await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
+            await c.send_message("@ourclg",m.user_id+"\n"+error)
 
 

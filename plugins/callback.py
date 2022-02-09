@@ -24,10 +24,15 @@ from bs4 import BeautifulSoup
 
 @Bot.on_callback_query()
 async def cdata(c, q):
-    chat_id = q.from_user.id
+    ch = q.from_user.mention
     data = q.data
     wait = "wait bro..."
     if data.startswith("ss|"):
         link = data.split("|", 1)[1]
         links = (data, link)
-        await q.edit(links)
+        await q.message.edit_text(link)
+        await q.answer(links, show_alert=True)
+    elif data == "alive":
+        ch = q.from_user.mention
+        await q.answer("i am alive bro", ahow_alert=True)
+        await c.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")
