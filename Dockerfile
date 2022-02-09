@@ -30,6 +30,6 @@ RUN tar Jxvf wkhtmltopdf.tar.xz
 RUN cp usr/bin/wkhtmltopdf /never
 ENTRYPOINT ["wkhtmltopdf"]
 COPY start.sh /start.sh
-
+RUN ls
 # Running Radio Player Bot
-CMD ["/bin/bash", "/start.sh"]
+CMD ["/start.sh"]
