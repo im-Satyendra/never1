@@ -15,5 +15,5 @@ fake_useragent
 telegraph
 pyromod
 lxml
-urllib
 regex
+urllib3
