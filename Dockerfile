@@ -2,7 +2,11 @@
 FROM debian:latest
 
 RUN apt update && apt upgrade -y
-
+RUN apt-get update \
+    && apt-get install -y \
+    ...
+    wkhtmltopdf \
+    ...
 # Installing Packages
 RUN apt install git curl python3-pip ffmpeg -y
 
@@ -17,7 +21,6 @@ RUN cd /
 RUN pip3 install -U -r requirements.txt
 RUN mkdir /never
 WORKDIR /never
-RUN sudo apt install wkhtmltopdf
 COPY start.sh /start.sh
 
 # Running Radio Player Bot
