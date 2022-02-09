@@ -15,9 +15,9 @@ COPY requirements.txt /requirements.txt
 # Installing Requirements
 RUN cd /
 RUN pip3 install -U -r requirements.txt
-RUN mkdir /RadioPlayerV3
-WORKDIR /RadioPlayerV3
-RUN apt install wkhtmltopdf
+RUN mkdir /never
+WORKDIR /never
+RUN sudo apt install wkhtmltopdf
 COPY start.sh /start.sh
 
 # Running Radio Player Bot
