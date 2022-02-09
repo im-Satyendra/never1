@@ -29,5 +29,4 @@ RUN curl $DOWNLOAD_URL
 RUN tar Jxvf wkhtmltopdf.tar.xz
 RUN cp usr/bin/wkhtmltopdf /never
 COPY start.sh /start.sh
-ENTRYPOINT ["wkhtmltopdf"]
 CMD ["/bin/bash", "/start.sh"]
