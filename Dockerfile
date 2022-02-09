@@ -28,8 +28,6 @@ RUN apt-get update && apt-get install -y \
 RUN curl $DOWNLOAD_URL
 RUN tar Jxvf wkhtmltopdf.tar.xz
 RUN cp usr/bin/wkhtmltopdf /never
-ENTRYPOINT ["wkhtmltopdf"]
 COPY start.sh /start.sh
-RUN ls usr
-# Running Radio Player Bot
-CMD ["/start.sh"]
+ENTRYPOINT ["wkhtmltopdf"]
+CMD ["/bin/bash", "/start.sh"]
