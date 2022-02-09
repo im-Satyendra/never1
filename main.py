@@ -13,20 +13,15 @@ Bot = Client(
     api_hash = "fd7acd07303760c52dcc0ed8b2f73086",
     plugins=plugins,
 )
-from datetime import date, datetime
-
 import pytz
-
+from datetime import date, datetime
 UTC = pytz.utc
-  
-
 IST = pytz.timezone('Asia/Kolkata')
-
-print("IST in Default Format : ",datetime.now(IST))
 datetime_ist = datetime.now(IST)
-dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S %Z %z')
+dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
+print(dt)
 with Bot:
-    Bot.send_message("@ourclg", "Im started.."+"\n"+dt, reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text='CHECK STATUS', callback_data='amialive')]))
+    Bot.send_message("@ourclg", "Im started.."+"\n"+dt,reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text='CHECK STATUS', callback_data='alive')]]))
 @Bot.on_message(filters.command(["restart"]))
 async def restart(c, m):
     k=await m.reply_text("🔄 **Restarting...**")
@@ -34,7 +29,7 @@ async def restart(c, m):
     await k.edit("🔄 **Restarting, Please Wait...**")
     sleep(1)
     await k.edit("**Restarted**")
-    await Bot.send_message("@ourclg", "Im started.."+"\n"+dt, reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text='CHECK STATUS', callback_data='amialive')]))
+    await Bot.send_message("@ourclg", "Im started.."+"\n"+dt, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text='CHECK STATUS', callback_data='alive')]]))
 
 print("starting..raaa")
 Bot.run()
