@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 # Download and extract wkhtmltopdf
 RUN curl $DOWNLOAD_URL
 RUN tar Jxvf wkhtmltopdf.tar.xz
-RUN cp wkhtmltox/bin/wkhtmltopdf /never
+RUN cp usr/bin/wkhtmltopdf /never
 ENTRYPOINT ["wkhtmltopdf"]
 COPY start.sh /start.sh
 
