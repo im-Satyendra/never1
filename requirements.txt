@@ -13,3 +13,4 @@ cfscrape
 BeautifulSoup4
 fake_useragent
 telegraph
+pyromod
