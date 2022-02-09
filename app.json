@@ -1,0 +1,33 @@
+{
+    "name": "never",
+    "description": "never",
+    "keywords": [
+        "never",
+        "nev"
+    ],
+    "repository": "https://github.com/CasperTeam/never",
+    "website": "ourclg.tech",
+    "success_url": "https://ourclg.tech",
+    "env": {
+        "IDK ": {
+            "description": "fill any",
+            "required": "True"
+        },
+        "IDDK": {
+            "description": "ii",
+            "required": "True"
+        }
+    },
+    "stack": "container",
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
