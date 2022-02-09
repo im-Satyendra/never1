@@ -11,3 +11,4 @@ wkhtmltopdf
 htmlwebshot
 cfscrape
 BeautifulSoup4
+fake_useragent
