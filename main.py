@@ -22,7 +22,7 @@ now = datetime.now()
 
 current_time = now.strftime("%H:%M:%S")
 with Bot:
-    Bot.send_message("@ourclg", "Im started.."+"\n"+today+"\n"+current_time, reply_markup=InlineKeyboardButton(text='CHECK STATUS', callback_data='amialive'))
+    Bot.send_message("@ourclg", "Im started.."+"\n"+today+"\n"+current_time, reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text='CHECK STATUS', callback_data='amialive')]))
 @Bot.on_message(filters.command(["restart"]))
 async def restart(c, m):
     k=await m.reply_text("🔄 **Restarting...**")
@@ -30,7 +30,7 @@ async def restart(c, m):
     await k.edit("🔄 **Restarting, Please Wait...**")
     sleep(1)
     await k.edit("**Restarted**")
-    await Bot.send_message("@ourclg", "Im started.."+"\n"+today+"\n"+current_time, reply_markup=InlineKeyboardButton(text='CHECK STATUS', callback_data='amialive'))
+    await Bot.send_message("@ourclg", "Im started.."+"\n"+today+"\n"+current_time, reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text='CHECK STATUS', callback_data='amialive')]))
 
 print("starting..raaa")
 Bot.run()
