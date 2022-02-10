@@ -24,6 +24,14 @@ from bs4 import BeautifulSoup
 
 @Bot.on_callback_query()
 async def cdata(c, q):
+
+    await c.answer_callback_query(
+    "alive",
+    text="Yeah im alive",
+    show_alert=True
+)   
+    ch = q.from_user.mention
+    await c.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")
     ch = q.from_user.mention
     data = q.data
     wait = "wait bro..."
@@ -35,4 +43,4 @@ async def cdata(c, q):
     elif data == "alive":
         ch = q.from_user.mention
         await q.answer("i am alive bro", ahow_alert=True)
-        await c.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")
+        await c.send_message("@ourclg", ch+"\n"+"asked me how im..  Iam alive!")
