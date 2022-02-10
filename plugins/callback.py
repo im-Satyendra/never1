@@ -33,6 +33,6 @@ async def cdata(c, q):
         await q.message.edit_text(link)
         await q.answer(links, show_alert=True)
     elif data == "alive":
-        ch = c.from_user.mention
+        ch = q.from_user.mention
         await q.message.edit_text("i am alivee"+ch, )
         await client.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")
