@@ -107,7 +107,7 @@ async def photo(c, m):
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
             await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
-            await c.send_message("@ourclg","\n"+error)
+            await c.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
 
     
     #), ("K86533866288957")]
