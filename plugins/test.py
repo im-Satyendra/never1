@@ -91,13 +91,18 @@ async def photo(c, m):
 
         for tt, liek, d in zip(titles, clean_links, descriptions):
             msg += f"[{tt}]({liek})\n`{d}`\n\n"
+            l1 = requests.get(clean_links[0]).text
+            l2 = requests.get(clean_links[1]).text
+            l3 = requests.get(clean_links[2]).text
+            l4 = requests.get(clean_links[3]).text
+            l5 = requests.get(clean_links[4]).text
             btn = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+clean_links[0],)],
-                #[InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+clean_links[1],)],
-              #  [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+clean_links[2],)],
-               # [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+clean_links[3],)],
-                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+clean_links[4],)],
+                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+l1,)],
+                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+l2,)],
+                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+l3,)],
+                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+l4,)],
+                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+l5,)],
 
             ]
                 )
@@ -163,13 +168,18 @@ async def tg(c,m):
 
         for tt, liek, d in zip(titles, clean_links, descriptions):
             msg += f"[{tt}]({liek})\n`{d}`\n\n"
-        btn = InlineKeyboardMarkup(
+            l1 = requests.get(clean_links[0]).text
+            l2 = requests.get(clean_links[1]).text
+            l3 = requests.get(clean_links[2]).text
+            l4 = requests.get(clean_links[3]).text
+            l5 = requests.get(clean_links[4]).text
+            btn = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+clean_links[0],)],
-                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+clean_links[1],)],
-                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+clean_links[2],)],
-                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+clean_links[3],)],
-                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+clean_links[4],)],
+                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+l1,)],
+                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+l2,)],
+                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+l3,)],
+                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+l4,)],
+                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+l5,)],
 
             ]
                 )
@@ -179,6 +189,6 @@ async def tg(c,m):
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
             await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
-            await c.send_message("@ourclg",m.user_id+"\n"+error)
+            
 
 
