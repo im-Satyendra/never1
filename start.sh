@@ -1,5 +1,5 @@
 echo "Cloning Repo, Please Wait..."
-git clone https://github.com/casperTeam/never1.git /never
+git clone https://github.com/casperTeam/never1.git /never1
 echo "Installing Requirements..."
 cd /never1
 pip3 install -U -r requirements.txt
