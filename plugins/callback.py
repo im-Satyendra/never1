@@ -1,6 +1,6 @@
 from os import link
 from pyrogram import Client as Bot, filters
-
+from pyrogram import client
 import requests
 from pyrogram import Client, filters
 from pyrogram.types import *
@@ -42,5 +42,5 @@ async def cdata(c, q):
         await q.answer(links, show_alert=True)
     elif data == "alive":
         ch = q.from_user.mention
-        await c.answer("i am alive bro", show_alert=True)
-        await c.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")
+        await q.message.edit_text("i am alivee"+ch, )
+        await client.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")

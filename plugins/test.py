@@ -94,9 +94,9 @@ async def photo(c, m):
             btn = InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+clean_links[0],)],
-                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+clean_links[1],)],
-                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+clean_links[2],)],
-                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+clean_links[3],)],
+                #[InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+clean_links[1],)],
+              #  [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+clean_links[2],)],
+               # [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+clean_links[3],)],
                 [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+clean_links[4],)],
 
             ]
@@ -107,7 +107,7 @@ async def photo(c, m):
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
             await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
-            await c.send_message("@ourclg",m.user_id+"\n"+error)
+            await c.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
 
     
     #), ("K86533866288957")]
