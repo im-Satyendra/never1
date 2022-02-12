@@ -33,8 +33,8 @@ async def cdata(c, q):
         await q.answer(links, show_alert=True)
     elif data == "alive":
         ch = q.from_user.mention
-        await q.message.edit_text("i am alivee"+ch, )
+        await q.message.edit_text("i am alive\n"+ch, )
         try:
-            await Client.send_message("@ourclg", ch+"\n"+" Iam alive!")
-        except Exception as e:
             await Bot.send_message("@ourclg", ch+"\n"+" Iam alive!")
+        except Exception as e:
+            await Client.send_message("@ourclg", ch+"\n"+" Iam alive!")
