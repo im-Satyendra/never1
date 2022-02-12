@@ -42,5 +42,5 @@ async def cdata(c, q):
         await q.answer(links, show_alert=True)
     elif data == "alive":
         ch = q.from_user.mention
-        await q.answer("i am alive bro", ahow_alert=True)
-        await c.send_message("@ourclg", ch+"\n"+"asked me how im..  Iam alive!")
+        await c.answer("i am alive bro", show_alert=True)
+        await c.send_message("@ourclg", ch+"\n"+"asked me how im.. so Iam alive!")
