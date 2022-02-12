@@ -13,7 +13,7 @@ logging.basicConfig(
     datefmt='%d-%b-%y %H:%M:%S',
     handlers=[
         TelegramLogHandler(
-            token="5016166355:AAEKxdlkF7ofJNW_bHKZRxl1iRHZlaR519A", 
+            token="1963945108:AAFyo9bg2k4BImXsAHgghYg2bEkkdaiDe4g", 
             log_chat_id=-1001543238877, 
             update_interval=2, 
             minimum_lines=1, 
@@ -32,7 +32,7 @@ plugins = dict(
 
 Bot = Client(
     "bot",
-    bot_token = "1963945108:AAFyo9bg2k4BImXsAHgghYg2bEkkdaiDe4g",
+    bot_token = "5016166355:AAEKxdlkF7ofJNW_bHKZRxl1iRHZlaR519A",
     api_id = 2171111,
     api_hash = "fd7acd07303760c52dcc0ed8b2f73086",
     plugins=plugins,
