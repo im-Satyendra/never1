@@ -18,3 +18,4 @@ lxml
 regex
 urllib3
 pytz
+tglogging
