@@ -28,7 +28,10 @@ datetime_ist = datetime.now(IST)
 dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
 from selenium import webdriver
 from time import sleep
+from selenium import webdriver
+from webdriver_manager.firefox import GeckoDriverManager
 
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 driver = webdriver.Firefox()
 driver.get('https://www.python.org')
 sleep(1)
