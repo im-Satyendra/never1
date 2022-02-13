@@ -1,6 +1,7 @@
 wget
 wheel
 psutil
+Pillow
 heroku3
 requests
 selenium
