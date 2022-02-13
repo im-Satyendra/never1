@@ -33,7 +33,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 driver = webdriver.Firefox()
-driver.get('https://www.python.org')
 sleep(1)
 
 driver.get_screenshot_as_file("screenshot.png")
