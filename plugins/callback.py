@@ -47,15 +47,18 @@ async def cdata(c, q):
     if data.startswith("ss|"):
      try:
             link = data.split("|", 1)[1]
-            await q.answer("Processing...", show_alert=True)
+            await q.answer("Opening webpage..", show_alert=True)
             shot = WebShot()
+            await q.answer("Downloading webpage..", show_alert=True)
             shot.create_pic(url=link)
+            await q.answer("Uploading webpage..", show_alert=True)
             await c.send_document(q.from_user.id, document="webshot.png")
      except Exception as e:
          await q.message.edit_text(e)
-         await c.send_document(q.from_user.id, document="webshot.png")
+         #await c.send_document(q.from_user.id, document="webshot.png")
          
      os.remove("webshot.png")
     elif data == "alive":
         ch = q.from_user.mention
         await q.message.edit_text("i am alive\n"+ch+"\n"+dt, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text='CHECK STATUS', callback_data='alive')]]))
+        await c.send_message("s4tyendra", ch+"\n pinged me")
