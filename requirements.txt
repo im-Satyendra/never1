@@ -20,5 +20,7 @@ lxml
 regex
 urllib3
 pytz
+asynco
 webscreenshot
 argparse
+aiofiles
