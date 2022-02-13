@@ -41,11 +41,11 @@ from webscreenshot.webscreenshot import *
 async def cdata(c, q):
     data = q.data
     wait = "wait bro..."
-    opt = argparse.Namespace(URL=None, cookie=None, header=None, http_password=None, http_username=None, input_file=None, log_level='DEBUG', multiprotocol=False, no_xserver=False, output_directory='/tmp/screenshots', port=None, proxy=None, proxy_auth=None, proxy_type=None, renderer='phantomjs', renderer_binary=None, ssl=False, timeout=30, verbosity=2, window_size='1200,800', workers=4)
+    opt = argparse.Namespace(URL=None, cookie=None, header=None, http_password=None, http_username=None, input_file=None, log_level='DEBUG', multiprotocol=True, no_xserver=False, output_directory='/tmp/screenshots', port=None, proxy=None, proxy_auth=None, proxy_type=None, renderer='phantomjs', renderer_binary=None, ssl=False, timeout=30, verbosity=2, window_size='1200,800', workers=4)
     if data.startswith("ss|"):
      try:
         link = data.split("|", 1)[1]
-        await q.answer("processing...", show_alert=True)
+        await q.answer("Processing...", show_alert=True)
         take_screenshot(link,options=opt)
         sleep(2)
         
