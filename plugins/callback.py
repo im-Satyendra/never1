@@ -47,7 +47,6 @@ async def cdata(c, q):
         sleep(2)
         driver.get_screenshot_as_file("idk.png")
         await Bot.send_document(q.message.from_user.id, "idk.png")
-        driver.quit()
      except Exception as e:
          await q.message.edit_text()
 
