@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from time import sleep
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import logging
-
+import os
 
 plugins = dict(
     root="plugins"
@@ -29,7 +29,13 @@ with Bot:
 async def restart(c, m):
     k=await m.reply_text("🔄 **Restarting...**")
     sleep(1)
-    await k.edit("🔄 **Restarting, Please Wait...**")
+    await k.edit("**cloning repo...**")
+    os.system("git clone https://github.com/casperTeam/never1.git")
+    sleep(1)
+    await k.edit("entering dir")
+    sleep(2)
+    os.system("cd never1 && python3 main.py")
+    await k.edit("🔄 **Starting..bash by python3 main.py**")
     sleep(1)
     await k.edit("**Restarted**")
     await Bot.send_message("@ourclg", "Im started.."+"\n"+dt, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text='CHECK STATUS', callback_data='alive')]]))
