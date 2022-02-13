@@ -97,13 +97,18 @@ async def photo(c, m):
             l3 = requests.get(dmn.format(clean_links[2])).text
             l4 = requests.get(dmn.format(clean_links[3])).text
             l5 = requests.get(dmn.format(clean_links[4])).text
+            k1 = l1.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k2 = l2.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k3 = l3.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k4 = l4.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k5 = l5.replace("v.gd/", "v.gd/prevdisable.php?url=")
             btn = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+l1,)],
-                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+l2,)],
-                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+l3,)],
-                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+l4,)],
-                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+l5,)],
+                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+k1,)],
+                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+k2,)],
+                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+k3,)],
+                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+k4,)],
+                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+k5,)],
 
             ]
                 )
@@ -178,13 +183,18 @@ async def tg(c,m):
             l3 = requests.get(dmn.format(clean_links[2])).text
             l4 = requests.get(dmn.format(clean_links[3])).text
             l5 = requests.get(dmn.format(clean_links[4])).text
+            k1 = l1.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k2 = l2.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k3 = l3.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k4 = l4.replace("v.gd/", "v.gd/prevdisable.php?url=")
+            k5 = l5.replace("v.gd/", "v.gd/prevdisable.php?url=")
             btn = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+l1,)],
-                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+l2,)],
-                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+l3,)],
-                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+l4,)],
-                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+l5,)],
+                [InlineKeyboardButton(text='Send SS of 1st Link?', callback_data='ss|'+k1,)],
+                [InlineKeyboardButton(text='Send SS of 2st Link?', callback_data='ss|'+k2,)],
+                [InlineKeyboardButton(text='Send SS of 3st Link?', callback_data='ss|'+k3,)],
+                [InlineKeyboardButton(text='Send SS of 4st Link?', callback_data='ss|'+k4,)],
+                [InlineKeyboardButton(text='Send SS of 5st Link?', callback_data='ss|'+k5,)],
 
             ]
                 )

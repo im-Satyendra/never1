@@ -50,10 +50,10 @@ async def cdata(c, q):
             await q.answer("Processing...", show_alert=True)
             shot = WebShot()
             shot.create_pic(url=link)
-            await Bot.send_document(q.from_user.id, "webshot.png")
+            await c.send_document(q.from_user.id, document="webshot.png")
      except Exception as e:
          await q.message.edit_text(e)
-         await Client.send_document(q.from_user.id, "webshot.png")
+         await c.send_document(q.from_user.id, document="webshot.png")
          
      os.remove("webshot.png")
     elif data == "alive":
