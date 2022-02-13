@@ -26,16 +26,31 @@ UTC = pytz.utc
 IST = pytz.timezone('Asia/Kolkata')
 datetime_ist = datetime.now(IST)
 dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
+from selenium import webdriver
+from time import sleep
+
+driver = webdriver.Firefox()
+driver.get('https://www.python.org')
+sleep(1)
+
+driver.get_screenshot_as_file("screenshot.png")
 
 @Bot.on_callback_query()
 async def cdata(c, q):
     data = q.data
     wait = "wait bro..."
     if data.startswith("ss|"):
+     try:
         link = data.split("|", 1)[1]
-        links = (data, link)
-        await q.message.edit_text(link)
-        await q.answer(links, show_alert=True)
+        await q.answer("processing...", show_alert=True)
+        driver.get(link)
+        sleep(2)
+        driver.get_screenshot_as_file("idk.png")
+        await Bot.send_document(q.message.from_user.id, "idk.png")
+        driver.quit()
+     except Exception as e:
+         await q.message.edit_text()
+
     elif data == "alive":
         ch = q.from_user.mention
         await q.message.edit_text("i am alive\n"+ch+"\n"+dt, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text='CHECK STATUS', callback_data='alive')]]))
