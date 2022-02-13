@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup
 async def _(c, m):
     k = await c.download_media(m.reply_to_message.photo.file_id, file_name="1.png",block=True)
     await m.reply_chat_action("typing")
-    await k.edit("scanning..")
+    l = await m.reply_text("scanning..")
     tt = uf(id)
     li = "https://telegra.ph" + tt[0]
     await k.edit("extracting..")
@@ -30,12 +30,12 @@ async def _(c, m):
     f"https://api.ocr.space/parse/imageurl?apikey=K86533866288957&url={li}"
     ).json()
     trt = gr["ParsedResults"][0]["ParsedText"]
-    await k.edit(f"**Question ~ ** `{trt}`")
+    await l.edit(f"**Question ~ ** `{trt}`")
     time.sleep(0.5)
-    await k.edit(f"**searching...`")
+    await l.edit(f"**searching...`")
     query = trt
     if not query:
-        await k.edit(
+        await l.edit(
         "`its not clear!`"
     )
         return
@@ -95,11 +95,11 @@ async def _(c, m):
             ]
                 )
         try:    
-            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markup = btn)
+            await l.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True, reply_markup = btn)
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
-            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
+            await l.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
             await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
