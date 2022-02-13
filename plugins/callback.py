@@ -29,13 +29,11 @@ dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
 from selenium import webdriver
 from time import sleep
 from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
-
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-driver = webdriver.Firefox()
-sleep(1)
-
-driver.get_screenshot_as_file("screenshot.png")
+from webdriver_manager.chrome import ChromeDriverManager
+options = webdriver.ChromeOptions()
+options.headless = True
+driver = webdriver.Chrome(ChromeDriverManager().install((),options=options))
+driver.implicitly_wait(10)
 
 @Bot.on_callback_query()
 async def cdata(c, q):
