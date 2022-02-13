@@ -20,7 +20,12 @@ from pyrogram import Client, filters
 from telegraph import upload_file as uf
 import requests
 from bs4 import BeautifulSoup
-
+import pytz
+from datetime import date, datetime
+UTC = pytz.utc
+IST = pytz.timezone('Asia/Kolkata')
+datetime_ist = datetime.now(IST)
+dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
 
 @Bot.on_callback_query()
 async def cdata(c, q):
@@ -33,8 +38,4 @@ async def cdata(c, q):
         await q.answer(links, show_alert=True)
     elif data == "alive":
         ch = q.from_user.mention
-        await q.message.edit_text("i am alive\n"+ch, )
-        try:
-            await Bot.send_message("@ourclg", ch+"\n"+" Iam alive!")
-        except Exception as e:
-            await Client.send_message("@ourclg", ch+"\n"+" Iam alive!")
+        await q.message.edit_text("i am alive\n"+ch+"\n"+dt, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text='CHECK STATUS', callback_data='alive')]]))

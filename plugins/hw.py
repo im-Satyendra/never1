@@ -18,9 +18,7 @@ from telegraph import upload_file as uf
 import requests
 from bs4 import BeautifulSoup
 
-@Bot.on_message(filters.command(["che"]))
+@Bot.on_message(filters.command(["ansp"]))
 async def che(bot, m):
-   
-        await m.reply_text(
-        text=f"YOU ARE NOTAUTHORISED"
-    )
+    k = m.replied.download
+    await m.reply_text(k)
