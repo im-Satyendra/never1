@@ -49,7 +49,7 @@ async def photo(c, m):
         query = trt
         if not query:
             await k.edit(
-            "`Error`"
+            "`its not clear!`"
         )
             return
         query = urllib.parse.quote_plus(query)
