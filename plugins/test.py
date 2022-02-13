@@ -112,8 +112,11 @@ async def photo(c, m):
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
-            await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
-            await c.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
+            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
+            time.sleep(0.5)
+            await c.send_message(m.chat.id,"You can send new task now")
+            await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
+            await Bot.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
 
     
     #), ("K86533866288957")]
@@ -190,7 +193,11 @@ async def tg(c,m):
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
-            await m.reply_text(f"⚠️ Ops, Something Went Wrong!\n\n**•Log: ** {error}")
+            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
+            time.sleep(0.5)
+            await c.send_message(m.chat.id,"You can send new task now")
+            await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
+            await Bot.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
             
 
 
