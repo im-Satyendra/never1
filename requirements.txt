@@ -20,3 +20,5 @@ urllib3
 pytz
 selenium
 webdriver_manager
+webscreenshot
+argparse

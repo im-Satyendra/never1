@@ -28,12 +28,15 @@ datetime_ist = datetime.now(IST)
 dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
 from selenium import webdriver
 from time import sleep
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-options = webdriver.ChromeOptions()
-options.headless = True
-driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.implicitly_wait(10)
+import argparse
+from webscreenshot.webscreenshot import *
+
+# url list to screenshot
+
+
+# defining options manually
+
+# actually launching the function
 
 @Bot.on_callback_query()
 async def cdata(c, q):
@@ -43,10 +46,10 @@ async def cdata(c, q):
      try:
         link = data.split("|", 1)[1]
         await q.answer("processing...", show_alert=True)
-        driver.get(link)
+        options = argparse.Namespace(URL=None, cookie=None, header=None, http_password=None, http_username=None, input_file=None, log_level='DEBUG', multiprotocol=False, no_xserver=False, output_directory='/tmp/screenshots', port=None, proxy=None, proxy_auth=None, proxy_type=None, renderer='phantomjs', renderer_binary=None, ssl=False, timeout=30, verbosity=2, window_size='1200,800', workers=4)
+        take_screenshot(link, options)
         sleep(2)
-        driver.get_screenshot_as_file("idk.png")
-        await Bot.send_document(q.message.from_user.id, "idk.png")
+        
      except Exception as e:
          await q.message.edit_text()
 
