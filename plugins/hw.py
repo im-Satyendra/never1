@@ -23,7 +23,7 @@ async def _(c, m):
     k = await c.download_media(m.reply_to_message.photo.file_id, file_name="1.png",block=True)
     await m.reply_chat_action("typing")
     l = await m.reply_text("scanning..")
-    tt = uf(id)
+    tt = uf(k)
     li = "https://telegra.ph" + tt[0]
     await k.edit("extracting..")
     gr = requests.get(

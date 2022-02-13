@@ -29,7 +29,6 @@ datetime_ist = datetime.now(IST)
 dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
 from time import sleep
 import argparse
-from selenium import webdriver
 from PIL import Image
 import asyncio
 import os
@@ -45,7 +44,6 @@ from htmlwebshot import WebShot
 async def cdata(c, q):
     data = q.data
     wait = "wait bro..."
-    driver = webdriver.Chrome()
     if data.startswith("ss|"):
      try:
             link = data.split("|", 1)[1]
