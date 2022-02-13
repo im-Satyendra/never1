@@ -1,4 +1,4 @@
-from os import link
+
 from pyrogram import Client as Bot, filters
 from pyrogram import client
 import requests
@@ -26,7 +26,6 @@ UTC = pytz.utc
 IST = pytz.timezone('Asia/Kolkata')
 datetime_ist = datetime.now(IST)
 dt = datetime_ist.strftime('%Y:%m:%d %H:%M:%S')
-from selenium import webdriver
 from time import sleep
 import argparse
 from webscreenshot.webscreenshot import *
@@ -42,16 +41,16 @@ from webscreenshot.webscreenshot import *
 async def cdata(c, q):
     data = q.data
     wait = "wait bro..."
+    opt = argparse.Namespace(URL=None, cookie=None, header=None, http_password=None, http_username=None, input_file=None, log_level='DEBUG', multiprotocol=False, no_xserver=False, output_directory='/tmp/screenshots', port=None, proxy=None, proxy_auth=None, proxy_type=None, renderer='phantomjs', renderer_binary=None, ssl=False, timeout=30, verbosity=2, window_size='1200,800', workers=4)
     if data.startswith("ss|"):
      try:
         link = data.split("|", 1)[1]
         await q.answer("processing...", show_alert=True)
-        options = argparse.Namespace(URL=None, cookie=None, header=None, http_password=None, http_username=None, input_file=None, log_level='DEBUG', multiprotocol=False, no_xserver=False, output_directory='/tmp/screenshots', port=None, proxy=None, proxy_auth=None, proxy_type=None, renderer='phantomjs', renderer_binary=None, ssl=False, timeout=30, verbosity=2, window_size='1200,800', workers=4)
-        take_screenshot(link, options)
+        take_screenshot(link,options=opt)
         sleep(2)
         
      except Exception as e:
-         await q.message.edit_text()
+         await q.message.edit_text(e)
 
     elif data == "alive":
         ch = q.from_user.mention
