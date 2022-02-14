@@ -47,11 +47,12 @@ async def cdata(c, q):
     if data.startswith("ss|"):
      try:
             link = data.split("|", 1)[1]
-            await q.answer("Opening webpage..", show_alert=True)
+            await c.send_chat_action(chat_id=q.from_user.id, action="upload_document")
+            await q.answer("Start Captureing webpage..", show_alert=True)
             shot = WebShot()
-            await q.answer("Downloading webpage..", show_alert=True)
+            await q.answer("Downloading webpage..",)
             shot.create_pic(url=link)
-            await q.answer("Uploading webpage..", show_alert=True)
+            await q.answer("Uploading webpage..",)
             await c.send_document(q.from_user.id, document="webshot.png")
      except Exception as e:
          await q.message.edit_text(e)
