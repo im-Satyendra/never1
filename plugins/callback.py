@@ -48,11 +48,12 @@ async def cdata(c, q):
      try:
             link = data.split("|", 1)[1]
             await c.send_chat_action(chat_id=q.from_user.id, action="upload_document")
-            await q.answer("Start Captureing webpage..", show_alert=True)
+            await q.answer("Start Capturing webpage..", show_alert=True)
             shot = WebShot()
-            await q.answer("Downloading webpage..",)
+            #await q.answer("Downloading webpage..",)
             shot.create_pic(url=link)
-            await q.answer("Uploading webpage..",)
+            #await q.answer("Uploading webpage..",)
+            await c.send_chat_action(chat_id=q.from_user.id, action="upload_document")
             await c.send_document(q.from_user.id, document="webshot.png")
      except Exception as e:
          await q.message.edit_text(e)
