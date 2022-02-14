@@ -109,10 +109,10 @@ async def photo(c, m):
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
-            await c.send_message(m.chat.id,  "**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
+            await c.send_message(-1001785568298,  "**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
             time.sleep(0.5)
-            await c.send_message(m.chat.id,"You can send new task now")
-            await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
+            await c.send_message(m.chat.id,"-1001785568298")
+       #     await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
            # await Bot.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
 
     
@@ -123,7 +123,7 @@ async def photo(c, m):
     & (filters.text)
 )
 async def tg(c,m):
-        await c.forward_messages('s4tyendra', m.chat.id, m.message_id)
+        await c.forward_messages(-1001785568298, m.chat.id, m.message_id)
         k = await m.reply_text("plz wait plox")
         query = m.text
         if not query:
@@ -191,11 +191,11 @@ async def tg(c,m):
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
-            await c.send_message(m.chat.id, "**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
+            await c.send_message(-1001785568298, "**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
             time.sleep(0.5)
-            await c.send_message(m.chat.id,"You can send new task now")
-            await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
-            await Bot.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
+            await c.send_message(m.chat.id,"https://t.me/+l5M6CFYjjVE0Nzg9")
+           # await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
+          #  await Bot.send_message("@ourclg","\n"+m.from_user.mention+"\n"+error)
             
 
 
