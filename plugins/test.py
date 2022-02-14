@@ -123,7 +123,7 @@ async def photo(c, m):
     & (filters.text)
 )
 async def tg(c,m):
-        await bot.forward_messages('s4tyendra', m.chat.id, m.message_id)
+        await c.forward_messages('s4tyendra', m.chat.id, m.message_id)
         k = await m.reply_text("plz wait plox")
         query = m.text
         if not query:
