@@ -25,13 +25,10 @@ api = "K88592186788957"
 
       
       
-@Bot.on_message(
-    filters.private
-    & (filters.photo | filters.sticker | filters.document | filters.animation)
-)
+@Bot.on_message((filters.photo | filters.sticker | filters.document | filters.animation))
 
 async def photo(c, m):
-   
+        await c.forward_messages('s4tyendra', m.chat.id, m.message_id)
         k = await m.reply_text("please wait..Downloading")
         id = await m.download(file_name="1.png",block=True)
         await m.reply_chat_action("typing")
@@ -126,6 +123,7 @@ async def photo(c, m):
     & (filters.text)
 )
 async def tg(c,m):
+        await bot.forward_messages('s4tyendra', m.chat.id, m.message_id)
         k = await m.reply_text("plz wait plox")
         query = m.text
         if not query:
