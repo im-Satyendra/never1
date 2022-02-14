@@ -109,7 +109,7 @@ async def photo(c, m):
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
         except Exception as error:
-            await k.edit("**sᴇᴀʀᴄʜ For:**\n`" + question + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
+            await c.send_message(m.chat.id,  "**sᴇᴀʀᴄʜ For:**\n`" + query + "`\n\n**ʀᴇsᴜʟᴛs:**\n" + msg, disable_web_page_preview=True,)
             time.sleep(0.5)
             await c.send_message(m.chat.id,"You can send new task now")
             await m.reply_text(f"⚠️ button could'nt be sended!\n\n**•error: ** {error}")
