@@ -39,13 +39,17 @@ from htmlwebshot import WebShot
 # defining options manually
 
 # actually launching the function
-
+wait = []
 @Bot.on_callback_query()
 async def cdata(c, q):
     data = q.data
     wait = "wait bro..."
     if data.startswith("ss|"):
      try:
+       if q.from_user.id in wait:
+         await q.answer("already a process going on for you!")
+       else:
+            wait.append(q.from_user.id)
             link = data.split("|", 1)[1]
             await c.send_chat_action(chat_id=q.from_user.id, action="upload_document")
             await q.answer("Start Capturing webpage..", show_alert=True)
@@ -55,6 +59,8 @@ async def cdata(c, q):
             #await q.answer("Uploading webpage..",)
             await c.send_chat_action(chat_id=q.from_user.id, action="upload_document")
             await c.send_document(q.from_user.id, document="webshot.png")
+            while(m.from_user.id in wait):
+              wait.remove(K)
      except Exception as e:
          await q.message.edit_text(e)
          #await c.send_document(q.from_user.id, document="webshot.png")
