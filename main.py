@@ -10,7 +10,7 @@ plugins = dict(
 )
 
 Bot = Client(
-    "bot",
+    "bdot",
     bot_token = "5526290298:AAEobpFpHx8MEp2jkttD_j4z9XCnLTeYAlQ",
     api_id = 2171111,
     api_hash = "fd7acd07303760c52dcc0ed8b2f73086",
