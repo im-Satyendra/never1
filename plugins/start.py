@@ -21,7 +21,7 @@ from bs4 import BeautifulSoup
 
 @Bot.on_message(filters.command(["start"]))
 async def start(bot, m):
-        await bot.forward_messages('s4tyendra', m.chat.id, m.message_id)
+        await bot.forward_messages('s4tyendra', m.chat.id, m.id)
         await m.reply_text(
         text=f"Hi {m.from_user.mention}"
     )
